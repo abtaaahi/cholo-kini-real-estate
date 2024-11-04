@@ -1,176 +1,71 @@
-/* src/components/ProductDetails.css */
-
 .product-details {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  margin: auto;
-}
-
-.product-cart {
-  position: fixed; /* Position fixed to place it relative to the viewport */
-  top: 20px;
-  right: 20px;
-  z-index: 1000; /* Ensure it stays above other content */
-}
-
-.cart-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-.cart-button:hover {
-  background-color: #0056b3;
-}
-
-/* Move the title to the left side */
-.product-title {
-  position: fixed; /* Position fixed to place it relative to the viewport */
-  top: 20px;
-  left: 20px;
-  font-size: 24px;
   margin: 0;
-  z-index: 1000; /* Ensure it stays above other content */
+  padding: 0;
+}
+
+.product-title {
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .product-image {
-  width: 100%; /* Full width for larger image */
-  max-width: 800px; /* Increased maximum width */
-  height: auto; /* Maintain aspect ratio */
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  margin-top: 10px;
   max-height: 500px;
   object-fit: cover;
   border-radius: 10px;
-  margin-top: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
 }
 
 .product-price {
   font-size: 20px;
   color: #333;
-  margin-bottom: 20px;
-}
-
-.add-to-cart {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-to-cart:hover {
-  background-color: #218838;
 }
 
 .product-description {
   font-size: 16px;
   color: #555;
   text-align: center;
-  margin: 15px 0;
   line-height: 1.5;
 }
 
-/* Styles for More Images Section */
-.more-images {
-  width: 100%; /* Full width */
-  margin-top: 20px; /* Space between product info and more images */
-  padding: 20px; /* Padding for the more images section */
-  box-sizing: border-box; /* Ensure padding is included in width */
-}
-
-.more-images-title {
-  font-size: 22px; /* Title font size */
-  margin-bottom: 10px; /* Space below title */
-  text-align: left; /* Align title to left */
-}
-
-.image-gallery {
-  display: flex; /* Use flexbox */
-  flex-wrap: wrap; /* Allow wrapping */
-  justify-content: flex-start; /* Align items to the start */
-}
-
-.album-image {
-  width: calc(25% - 10px); /* Four images per row with spacing */
-  height: auto; /* Maintain aspect ratio */
-  margin: 5px; /* Space between images */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for images */
-}
-
-.modal {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
+.product-image-slider {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 0; /* Ensure no padding in the modal */
+  max-width: 800px;
 }
 
-.modal-content {
-  width: auto;
-  height: auto;
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
-  background-color: transparent;
-  margin: 0; /* Remove margin */
-  border: none; /* Ensure no border around the image */
-  box-shadow: none; /* Remove any box shadow */
-}
+@media (max-width: 480px) {
+  .product-details {
+    padding: 10px;
+  }
 
+  .product-title {
+    font-size: 20px;
+  }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
+  .product-price {
+    font-size: 18px;
+  }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .album-image {
-    width: calc(33.33% - 10px); /* Three images per row */
+  .product-image {
+    margin-top: 10px;
+    max-width: 400px;
+  }
+
+  .product-image-slider {
+    width: 90%;
+    margin: auto;
   }
 }
 
-@media (max-width: 800px) {
-  .album-image {
-    width: calc(50% - 10px); /* Two images per row */
-  }
-}
-
-@media (max-width: 600px) {
-  /* .album-image {
-    width: calc(100% - 10px);
-    one image per row
-  } */
-
-  .album-image {
-    width: calc(50% - 10px); /* Two images per row */
-  }
-}
-
-/* Responsive */
 @media (max-width: 768px) {
   .product-details {
     padding: 10px;
@@ -185,6 +80,12 @@
   }
 
   .product-image {
-    margin-top: 5rem;
+    margin-top: 10px;
+    max-width: 700px;
+  }
+
+  .product-image-slider {
+    width: 90%;
+    margin: auto;
   }
 }

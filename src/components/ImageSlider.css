@@ -1,26 +1,69 @@
 .slider-container {
-  width: 80%; /* Set width to 70-80% of the screen */
-  max-width: 1200px; /* Optional max width to prevent it from getting too large on very wide screens */
-  margin: 20px auto; /* Center the container horizontally */
+  width: 90%;
+  max-width: 1200px;
+  height: 500px; /* Height for larger screens */
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
   box-sizing: border-box;
-  padding: 0 15px;
 }
 
 .slider-container img {
-  border-radius: 2rem;
-  width: 100%; /* Makes image take up full width of the container */
-  height: 500px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 2rem;
+  cursor: pointer;
 }
 
-/* Smaller image and padding adjustment for small screens */
+/* Slide setup */
+.slide {
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off-screen to the left */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Active class for the slide */
+.slide.active {
+  left: 0; /* Move into view */
+  opacity: 1;
+  z-index: 10;
+  animation: slideZoomOut 3s ease-in-out forwards; /* Apply the slide and zoom out animation */
+}
+
+/* Animation keyframes */
+@keyframes slideZoomOut {
+  0% {
+    transform: translateX(0) scale(1); /* Start at full size */
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    transform: translateX(0) scale(1); /* Hold position at full size */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: translateX(100%) scale(0.8); /* Move out to the right while scaling down */
+    opacity: 0; /* Fade out */
+  }
+}
+
+/* Adjusting height for smaller screens */
 @media (max-width: 768px) {
   .slider-container {
-    width: 90%; /* Adjust width on smaller screens for better fit */
-    padding: 0 10px; /* Reduce padding on smaller screens */
+    height: 300px; /* Reduced height for medium screens */
   }
+}
 
-  .slider-container img {
-    height: 300px;
+@media (max-width: 480px) {
+  .slider-container {
+    height: 200px; /* Further reduced height for small screens */
   }
 }

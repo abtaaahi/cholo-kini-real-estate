@@ -1,31 +1,53 @@
 .product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     /* margin: 20px; */
-    margin-top: 20px;
+    margin-top: 40px;
     width: 100%;
     box-sizing: border-box;
   }
   
   .product-card {
-    background-color: white;
-    border-radius: 5px;
-    padding: 20px;
-    width: 200px;
+    background-color: black;
+    width: 450px;
     text-align: center;
-    margin: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100px); 
+}
+
+.product-card.visible {
+    opacity: 1; /* Make visible when scrolled into view */
+    transform: translateX(0); /* Move to original position */
+    animation: slideIn 2s forwards; /* Apply animation */
+}
+
+.product-card img:hover {
+  transform: translateX(0) scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 12px rgba(180, 174, 174, 0.956);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0; /* Start transparent */
+        transform: translateX(-100px); /* Move from the left */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: translateX(0); /* Move to the original position */
+    }
+}
   
-  .product-card img {
+  .product-card img { 
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;          /* Image takes full width of the card */
-    height: 150px;        /* Fixed height for uniformity */
+    height: 220px;        /* Fixed he ight for uniformity */
     object-fit: cover;    /* Ensures the image covers the area without distortion */
-    border-radius: 5px;   /* Optional: gives the image rounded corners */
   }
   
-  .see-details {
+  /* .see-details {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #007bff;
@@ -37,7 +59,7 @@
   
   .see-details:hover {
     background-color: #0056b3;
-  }
+  } */
   
   /* Responsive */
   @media (max-width: 768px) {
@@ -45,7 +67,7 @@
       /* flex-direction: column;
       align-items: center; */
       display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     /* gap: 10px; */
     justify-items: center;
     /* padding: 0 10px; */
@@ -53,7 +75,11 @@
 
     .product-card {
       padding: 20px;
-      width: 160px;
-      margin: 0;
+      width: 100%;
+    }
+
+    .product-card img { 
+      width: 100%;          /* Image takes full width of the card */
+      height: 220px;        /* Fixed he ight for uniformity */
     }
   }
