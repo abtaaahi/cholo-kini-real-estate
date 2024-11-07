@@ -11,3 +11,20 @@ html, body {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
+/* Custom styles for ToastContainer */
+.Toastify__toast-container {
+  width: 90%; /* Customize the width */
+  max-width: 500px; /* Limit the maximum width */
+}
+
+.Toastify__toast {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text color */
+  font-size: 16px; /* Increase font size */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.Toastify__progress-bar {
+  background-color: #f8b400; /* Custom color for progress bar */
+}

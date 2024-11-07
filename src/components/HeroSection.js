@@ -35,6 +35,12 @@ const HeroSection = () => {
               <Link to="/aboutus" className="menu-link" onClick={handleMenuLinkClick}>About Us</Link>
               <span className="divider"></span>
               <Link to="/contact" className="menu-link" onClick={handleMenuLinkClick}>Contact Us</Link>
+              <span className="divider"></span>
+              <Link to="/review" className="menu-link" onClick={handleMenuLinkClick}>Customer Review</Link>
+            </div>
+
+            <div className="small-screen-divider">
+              <hr />
             </div>
 
             {/* <h3>Services:</h3> */}
@@ -48,6 +54,10 @@ const HeroSection = () => {
               <Link to="/designconsultency" className="menu-link" onClick={handleMenuLinkClick}>Design Consultency</Link>
               <span className="divider"></span>
               <Link to="/registrationsupport" className="menu-link" onClick={handleMenuLinkClick}>Registration Support</Link>
+            </div>
+
+            <div className="small-screen-divider">
+              <hr />
             </div>
 
             {/* <h3>Others:</h3> */}

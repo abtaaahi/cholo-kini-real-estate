@@ -1,0 +1,141 @@
+.customer-review-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.review-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: start;
+  margin: 20px 0;
+}
+
+.review-form, .review-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: white; 
+  background-color: transparent;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 8px; 
+  border: 1px solid #ccc; 
+  color: white; 
+  background-color: transparent; 
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+  color: #666; 
+}
+
+.review-form button {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  background-color: white;
+  color: black;
+}
+
+.review-form button:hover {
+  background-color: green;
+  color: white;
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+.star-rating {
+  display: flex;
+}
+
+.star {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.star:hover {
+  color: rgb(11, 154, 11);
+}
+
+.star.selected {
+  color: rgb(11, 154, 11);
+}
+
+.reviews-list {
+  margin-top: 30px;
+}
+
+.review-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-info {
+  flex: 1;
+}
+
+.designation {
+  font-size: 0.9rem;
+  color: gray;
+  margin: 0;
+}
+
+.star-rating-display {
+  font-size: 1.2rem;
+  color: rgb(11, 154, 11);
+  align-self: flex-start;
+}
+
+.time-posted {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.reviewMessage{
+  font-style: italic;
+}
+
+.reviewName{
+  text-transform: uppercase;
+}

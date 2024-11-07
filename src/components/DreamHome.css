@@ -1,0 +1,156 @@
+.dream-home-container {
+    width: 100%;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    color: #9f9f9f;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.phrase {
+    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in-up {
+    opacity: 1;
+    transform: translateY(-20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.fade-out-down {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeOutDown 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+.image-section {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+}
+
+.house-image {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+.overlayhero {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.left-overlay {
+    left: 0;
+    text-align: left;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.right-overlay {
+    right: 0;
+    text-align: right;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.left-overlay p, .right-overlay p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+@media (max-width: 1000px) {
+    .left-overlay p, .right-overlay p {
+        font-size: 0.8rem;
+    } 
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .image-section {
+        height: 300px;
+    }
+
+    .house-image {
+        height: 300px;
+    }
+
+    .overlayhero {
+        width: 25%;
+        padding: 1rem;
+    }
+
+    .left-overlay p, .right-overlay p {
+        font-size: 0.7rem;
+    } 
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .image-section {
+        height: 220px;
+    }
+
+    .house-image {
+        height: 220px;
+    }
+
+    .overlayhero {
+        width: 30%;
+        padding: 0.9rem;
+    }
+
+    .left-overlay p, .right-overlay p {
+        font-size: 0.6rem;
+    }    
+}

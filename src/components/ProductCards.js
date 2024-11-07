@@ -1,7 +1,8 @@
-// src/components/ProductCards.js
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { products } from "../data/products"; // Import centralized products data
+import { toast } from "react-toastify";
+import { products } from "../data/products";
+import "react-toastify/dist/ReactToastify.css";
 import "./ProductCards.css";
 
 const ProductCards = () => {
@@ -11,28 +12,29 @@ const ProductCards = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Add 'visible' class to the card when it is in view
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Stop observing once visible
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 }); // Trigger when 10% of the card is visible
+    }, { threshold: 0.1 });
 
-    // Observe each card
     cardRefs.current.forEach((card) => {
       if (card) observer.observe(card);
     });
 
     return () => {
-      // Clean up observer on component unmount
       observer.disconnect();
     };
   }, []);
 
   const navigate = useNavigate();
 
-  const handleProductClick = (id) => {
-    navigate(`/product/${id}`); // Navigate to the product details page
+  const handleProductClick = (id, isAvailable) => {
+    if (!isAvailable) {
+      toast.error("This product is currently not available.");
+      return;
+    }
+    navigate(`/product/${id}`);
   };
 
   return (
@@ -42,12 +44,25 @@ const ProductCards = () => {
           className="product-card" 
           key={product.id} 
           ref={(el) => (cardRefs.current[index] = el)} 
-          onClick={() => handleProductClick(product.id)}
+          onClick={() => handleProductClick(product.id, product.isAvailable)}
         >
-          <img src={product.image} alt={product.name} />
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          {/* <button className="see-details">See Details</button> */}
+          <div className="card-image">
+            <img src={product.image} alt={product.name} />
+            <div className="badges">
+              <span className="badge featured">Featured</span>
+              <span className="badge for-sale">For Sale</span>
+            </div>
+          </div>
+          <div className="card-content">
+            <p className="location"><i className="fa-solid fa-location-dot"></i> {product.location}</p>
+            <h3>{product.name}</h3>
+            <div className="details">
+              <span><i className="fa-solid fa-bed"></i>Beds: {product.beds}</span>
+              <span><i className="fa-solid fa-bath"></i> Baths: {product.baths}</span>
+              <span><i className="fa-solid fa-ruler"></i> Sqft: {product.area}</span>
+            </div>
+            <p className="price">BDT {product.price}</p>
+          </div>
         </div>
       ))}
     </div>

@@ -24,7 +24,7 @@ const ProductDetails = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
   };
 
   return (
@@ -60,6 +60,14 @@ const ProductDetails = () => {
           )}
 
           <p className="product-price">BDT {product.price}</p>
+          <div className="card-content-details">
+            <p className="locationdetails"><i class="fa-solid fa-location-dot"></i> {product.location}</p>
+            <div className="detailsproduct">
+              <span><i class="fa-solid fa-bed"></i>Beds: {product.beds}</span>
+              <span><i class="fa-solid fa-bath"></i> Baths: {product.baths}</span>
+              <span><i class="fa-solid fa-ruler"></i> Sqft: {product.area}</span>
+            </div>
+          </div>
           <p className="product-description">{product.description}</p>
         </>
       ) : (
