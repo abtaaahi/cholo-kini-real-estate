@@ -11,6 +11,8 @@ import ProductDetails from "./components/ProductDetails";
 import ContactUs from './components/ContactUs';
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import AboutUs from "./components/AboutUs";
+import DesignConsultancy from "./components/DesignConsultancy";
+import InteriorSolution from "./components/InteriorSolution";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -38,6 +40,8 @@ function App() {
           <Route path="/policy" element={<PrivacyPolicy />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/review" element={<CustomerReview />} />
+          <Route path="/designconsultency" element={<DesignConsultancy />} />
+          <Route path="/interiorsolution" element={<InteriorSolution />} />
         </Routes>
         <Footer />
         <FloatingWhatsAppButton />

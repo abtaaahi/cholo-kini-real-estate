@@ -1,0 +1,73 @@
+.design-consultancy {
+  text-align: center;
+}
+
+.subtitleDesign {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: justify;
+  padding: 2rem;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Same as Interior Solution */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.slideshow-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeInZoomOut 5s ease-in-out infinite;
+}
+
+@keyframes fadeInZoomOut {
+  0% {
+      opacity: 0;
+      transform: scale(1);
+  }
+  10% {
+      opacity: 1;
+      transform: scale(1.1);
+  }
+  50% {
+      opacity: 1;
+      transform: scale(1);
+  }
+  90% {
+      opacity: 0;
+      transform: scale(1.1);
+  }
+  100% {
+      opacity: 0;
+      transform: scale(1);
+  }
+}
+
+/* Media Query for Small Screens (max width 600px) */
+@media (max-width: 600px) {
+  .slideshow-container {
+      height: 200px; /* Adjust height for smaller screens */
+  }
+
+  .subtitleDesign {
+      font-size: 1rem; /* Smaller font size for better readability */
+      
+  }
+}
+
+/* Media Query for Medium Screens (max width 768px) */
+@media (max-width: 768px) {
+  .slideshow-container {
+      height: 300px; /* Slightly smaller height for medium screens */
+  }
+}
