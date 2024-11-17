@@ -1,46 +1,76 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react'; 
 import './InteriorSolution.css';
 
-const imageArray = [
-  'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=1992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1618222104927-33e0bd5f8dae?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1617104833784-3b37a50d1c76?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1618220321979-ecb3a975aa82?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1617104611622-d5f245d317f0?q=80&w=1784&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1618219788702-20a1ef509691?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+const imageArrayHouse = [
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263348/IMG-20241110-WA0010_tbmqbf.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263349/IMG-20241110-WA0003_acgttg.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263348/IMG-20241110-WA0011_myancp.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263349/IMG-20241110-WA0004_lmormf.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263349/IMG-20241110-WA0012_bqmxkq.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263350/IMG-20241110-WA0002_txpcth.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263348/IMG-20241110-WA0009_ngylfz.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263351/IMG-20241110-WA0005_wh41m1.jpg'
+];
+
+const imageArrayOffice = [
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263291/IMG-20241110-WA0016_tf56fh.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263291/IMG-20241110-WA0013_yv4rfq.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263291/IMG-20241110-WA0015_xs5di0.jpg',
+  'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263291/IMG-20241110-WA0014_fpyrji.jpg'
 ];
 
 const InteriorSolution = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % imageArray.length);
-    }, 5000);
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
 
-    return () => clearInterval(interval);
-  }, []);
+  const closeFullScreen = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <div className="interior-solution">
       <h1>Interior Solution</h1>
-      <div
-        className="slideshow-container-interior"
-        style={{ backgroundImage: `url(${imageArray[currentIndex]})` }}
-      >
-        <img
-          src={imageArray[currentIndex]}
-          alt={`Interior ${currentIndex + 1}`}
-          className="slideshow-image-interior"
-        />
-      </div>
       <p className="subtitleinterior">
         Our Interior Solution services are designed to transform your space into a functional, aesthetic, and harmonious environment. 
         Whether it's residential or commercial, we ensure every detail aligns with your vision and meets the highest standards of design and quality. 
         From initial consultations to detailed plans and expert installation, our team brings experience, creativity, and precision to every project. 
         We prioritize sustainability, functionality, and timeless elegance, making sure your space is as unique and inspiring as you are.
       </p>
+
+      <h2>Residence:</h2>
+      <div className="image-gallery">
+        {imageArrayHouse.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Residence ${index + 1}`}
+            className="gallery-image"
+            onClick={() => handleImageClick(image)}
+          />
+        ))}
+      </div>
+
+      <h2>Office:</h2>
+      <div className="image-gallery">
+        {imageArrayOffice.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Office ${index + 1}`}
+            className="gallery-image"
+            onClick={() => handleImageClick(image)}
+          />
+        ))}
+      </div>
+
+      {selectedImage && (
+        <div className={`fullscreen-overlay ${selectedImage ? 'show' : ''}`} onClick={closeFullScreen}>
+          <img src={selectedImage} alt="Full Screen" className="fullscreen-image" />
+        </div>
+      )}
     </div>
   );
 };
