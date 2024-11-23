@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
 import './InteriorSolution.css';
+import WhatWeDo from './WhatWeDo';
 
 const imageArrayHouse = [
   'https://res.cloudinary.com/dasqmi9fl/image/upload/v1731263348/IMG-20241110-WA0010_tbmqbf.jpg',
@@ -47,6 +48,8 @@ const InteriorSolution = () => {
         From initial consultations to detailed plans and expert installation, our team brings experience, creativity, and precision to every project. 
         We prioritize sustainability, functionality, and timeless elegance, making sure your space is as unique and inspiring as you are.
       </p>
+
+      <WhatWeDo/>
 
       <h2>Residence:</h2>
       <div className="image-gallery">

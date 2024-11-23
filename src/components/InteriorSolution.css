@@ -1,6 +1,11 @@
 .interior-solution {
     text-align: center;
   }
+
+  .interior-solution h1{
+    margin: 0;
+    padding: 0;
+  }
   
   .subtitleinterior {
     font-size: 1.2rem;
