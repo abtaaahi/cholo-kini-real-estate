@@ -3,6 +3,7 @@ import './ContactUs.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import Loader from "./Loader";
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -13,10 +14,11 @@ const ContactUs = () => {
         message: ''
     });
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         
-        // Prevent non-numeric characters in phone field
         if (name === 'phone') {
             if (!/^\d*$/.test(value) || value.length > 12) {
                 return;
@@ -29,33 +31,29 @@ const ContactUs = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Simple form validation
+        setIsLoading(true);
+
         if (!formData.select || !formData.name || !formData.email || !formData.phone || !formData.message) {
             toast.error("Please fill in all fields.");
             return;
         }
 
-        // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
             toast.error("Please enter a valid email address.");
             return;
         }
 
-        // Phone validation
         if (formData.phone.length < 10) {
             toast.error("Phone number must be at least 10 digits.");
             return;
         }
 
         try {
-            // Send data to server
             const response = await axios.post('https://info.backend.cholokini.sahossain.com/api/contact', formData);
 
-            // Show success message if submission is successful
             toast.success("Enquiry submitted successfully!");
             
-            // Reset form
             setFormData({
                 select: '',
                 name: '',
@@ -66,7 +64,9 @@ const ContactUs = () => {
         } catch (error) {
             console.error("Error submitting enquiry:", error);
             toast.error("Failed to submit enquiry. Please try again later.");
-        }
+        } finally {
+            setIsLoading(false);
+          }
     };
 
     return (
@@ -104,6 +104,7 @@ const ContactUs = () => {
                     <button type="submit">SUBMIT</button>
                 </form>
             </div>
+            <Loader isVisible={isLoading} />
         </div>
     );
 };
