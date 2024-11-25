@@ -14,6 +14,9 @@ import AboutUs from "./components/AboutUs";
 import DesignConsultancy from "./components/DesignConsultancy";
 import InteriorSolution from "./components/InteriorSolution";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
+import CDAApproval from "./components/CDAApproval";
+import LegalVetting from "./components/LegalVetting";
+import RegistrationSupport from "./components/RegistrationSupport";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
@@ -42,6 +45,9 @@ function App() {
           <Route path="/review" element={<CustomerReview />} />
           <Route path="/designconsultency" element={<DesignConsultancy />} />
           <Route path="/interiorsolution" element={<InteriorSolution />} />
+          <Route path="/cdaapproval" element={<CDAApproval />} />
+          <Route path="/legalvetting" element={<LegalVetting />} />
+          <Route path="/registrationsupport" element={<RegistrationSupport />} />
         </Routes>
         <Footer />
         <FloatingWhatsAppButton />

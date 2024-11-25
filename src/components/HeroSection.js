@@ -47,11 +47,11 @@ const HeroSection = () => {
             <div className="menu-section">
               <Link to="/interiorsolution" className="menu-link" onClick={handleMenuLinkClick}>Interior Solution</Link>
               <span className="divider"></span>
+              <Link to="/designconsultency" className="menu-link" onClick={handleMenuLinkClick}>Design Consultency</Link>
+              <span className="divider"></span>
               <Link to="/cdaapproval" className="menu-link" onClick={handleMenuLinkClick}>CDA Approval</Link>
               <span className="divider"></span>
               <Link to="/legalvetting" className="menu-link" onClick={handleMenuLinkClick}>Legal Vetting</Link>
-              <span className="divider"></span>
-              <Link to="/designconsultency" className="menu-link" onClick={handleMenuLinkClick}>Design Consultency</Link>
               <span className="divider"></span>
               <Link to="/registrationsupport" className="menu-link" onClick={handleMenuLinkClick}>Registration Support</Link>
             </div>

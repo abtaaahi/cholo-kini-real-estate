@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.design-consultancy h1{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.react-markdown-design {
+  text-align: left;
+  line-height: 1.6;
+  padding: 5rem;
+}
+
 .subtitleDesign {
   font-size: 1.2rem;
   color: #666;
@@ -69,5 +82,13 @@
 @media (max-width: 768px) {
   .slideshow-container {
       height: 300px; /* Slightly smaller height for medium screens */
+  }
+
+  .react-markdown-design {
+    padding: 1rem;
+  }
+
+  .react-markdown-design h1{
+    font-size: 1.3rem;
   }
 }

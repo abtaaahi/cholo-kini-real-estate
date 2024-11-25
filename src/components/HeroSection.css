@@ -27,6 +27,7 @@
   margin: 0;
   font-size: 1rem;
   color: #cccccc;
+  padding: 0;
 }
 
 .hamburger-menu {
@@ -114,7 +115,7 @@
 }
 
 .menu-link:hover {
-  color: #ff007b;
+  color: #8db61c;
 }
 
 .menu-link:hover::after {

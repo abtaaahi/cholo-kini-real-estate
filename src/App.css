@@ -12,19 +12,51 @@ html, body {
   box-sizing: inherit;
 }
 
-/* Custom styles for ToastContainer */
+::selection {
+  background-color: #8db61c;
+  color: black; 
+}
+
+::-moz-selection {
+  background-color: #8db61c;
+  color: black;
+}
+
+* {
+  outline: none;
+}
+
+a, button, input, textarea {
+  -webkit-tap-highlight-color: transparent; 
+  outline: none;
+}
+
 .Toastify__toast-container {
-  width: 90%; /* Customize the width */
-  max-width: 500px; /* Limit the maximum width */
+  width: 100%; 
+  max-width: 500px; 
 }
 
 .Toastify__toast {
-  background-color: #333; /* Dark background */
-  color: #fff; /* White text color */
-  font-size: 16px; /* Increase font size */
-  border-radius: 8px; /* Rounded corners */
+  background-color: #333; 
+  color: #fff;
+  font-size: 16px; 
+  border-radius: 8px; 
 }
 
 .Toastify__progress-bar {
-  background-color: #f8b400; /* Custom color for progress bar */
+  background-color: #f8b400; 
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: black;
+}  
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
 }
