@@ -1,9 +1,25 @@
+.parent-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    position: relative; 
+    overflow: hidden; 
+    background-image: url("https://res.cloudinary.com/dasqmi9fl/image/upload/v1732782255/image_1_c8sm1k.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 .policy-container {
     text-align: left;
-    margin: 20px;
     padding: 20px;
     line-height: 1.6;
-    font-family: Arial, sans-serif;
+    width: 60%;
+    max-width: 800px;
 }
 
 .policy-container h1,
@@ -11,6 +27,7 @@
 .policy-container h3 {
     text-align: left;
     margin-bottom: 10px;
+    margin-top: 0;
 }
 
 .policy-container ul,
@@ -27,10 +44,6 @@
     text-decoration: underline;
 }
 
-/* .policy-container strong {
-    color: #8db61c;
-  } */
-
 .policy-container hr {
     border: none;
     border-top: 1px solid rgb(53, 53, 53);
@@ -38,10 +51,14 @@
 }
 
 @media screen and (max-width: 768px) {
+    .parent-container {
+        margin-top: 0px;
+    }
 
     .policy-container {
         margin: 0;
         padding: 20px;
+        width: 100%;
     }
 
     .policy-container h1 {

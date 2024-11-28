@@ -82,8 +82,10 @@ Don’t let legal uncertainties overshadow your dream of owning a property. Whet
 Contact me today to discuss your property purchase requirements and how I can assist you. Together, we’ll make your investment journey seamless and secure.
   `;
   return (
+   <div className="parent-container">
     <div className="policy-container">
       <ReactMarkdown>{markdown}</ReactMarkdown>
+    </div>
     </div>
   );
 };

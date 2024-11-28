@@ -75,8 +75,10 @@ Property registration is a critical milestone, and I am here to ensure it is com
 Contact me today to discuss your property registration needs, and let’s secure your investment together.
   `;
   return (
+    <div className="parent-container">
     <div className="policy-container">
       <ReactMarkdown>{markdown}</ReactMarkdown>
+    </div>
     </div>
   );
 };

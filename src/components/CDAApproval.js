@@ -102,8 +102,10 @@ If you are looking for reliable support to secure a building permit from CDA, I 
 Contact me today to discuss your project and how I can assist you in achieving your development goals.
   `;
   return (
+   <div className="parent-container">
     <div className="policy-container">
       <ReactMarkdown>{markdown}</ReactMarkdown>
+    </div>
     </div>
   );
 };
